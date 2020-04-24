@@ -16,6 +16,7 @@ namespace CSharpBasic.Controllers
 
         public IActionResult Index()
         {
+            //test
             return View();
         }
 
