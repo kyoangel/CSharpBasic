@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CSharpBasic.Controllers;
+using CSharpBasic.Interfaces;
+using CSharpBasic.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +27,8 @@ namespace CSharpBasic
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddHttpClient<IIpService,IpService>();
+            services.AddTransient<IIpService, IpService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
