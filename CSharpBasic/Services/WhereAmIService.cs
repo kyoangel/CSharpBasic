@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using CSharpBasic.Interfaces;
 using CSharpBasic.Models;
-using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
+using Microsoft.Extensions.Logging;
 
 namespace CSharpBasic.Services
 {
-    public class WhereAmIService
+    public class WhereAmIService : IWhereAmIService
     {
         private readonly HttpClient _client;
 
