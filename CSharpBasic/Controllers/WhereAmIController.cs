@@ -24,18 +24,13 @@ namespace CSharpBasic.Controllers
         public async Task<ActionResult<WhereAmIResponse>> Index()
         {
             var response = await _whereAmIService.GetIp();
-            var request = PrepareGetDetail(response.Ip);
+            var request = new List<string>() {response.Ip};
             var detail = await _whereAmIService.GetIpDetail(request);
             return Ok(new WhereAmIResponse
             {
                 Ip = detail[0].Query,
                 CountryCode = detail[0].CountryCode
             });
-        }
-
-        public List<string> PrepareGetDetail(string ip)
-        {
-            return new List<string>() {ip};
         }
     }
 }

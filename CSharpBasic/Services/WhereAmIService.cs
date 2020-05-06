@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using CSharpBasic.Interfaces;
 using CSharpBasic.Models;
-using Microsoft.Extensions.Logging;
 
 namespace CSharpBasic.Services
 {
