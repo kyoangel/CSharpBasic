@@ -40,17 +40,7 @@ namespace CSharpBasic.Controllers
         [HttpGet("WhereAmI")]
         public async Task<ActionResult<CheckIpResponse>> CheckIp()
         {
-            var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress;
-            if (remoteIpAddress.IsIPv4MappedToIPv6)
-            {
-                remoteIpAddress = remoteIpAddress.MapToIPv4();
-            }
-
-            var ip = remoteIpAddress.ToString();
-            if (Request.HttpContext.Request.Host.Host.ToLower() == "localhost")
-            {
-                ip = "24.48.0.1";
-            }
+            var ip = await _ipiFyProxy.GetCurrentIpAsync();
 
             var ipCheckResponse = await _ipiFyProxy.IpCheckAsync(ip);
 

@@ -23,9 +23,13 @@ namespace CSharpBasic
         {
             services.AddControllersWithViews();
 
-            services.AddHttpClient("IpProxy", client =>
+            services.AddHttpClient("IpIfy.COM", client =>
             {
                 client.BaseAddress = new Uri("http://ip-api.com");
+            });
+            services.AddHttpClient("Ipify.ORG", client =>
+            {
+                client.BaseAddress = new Uri("https://api.ipify.org/");
             });
             services.AddScoped<IIpIFyProxy, IpIFyProxy>();
         }
