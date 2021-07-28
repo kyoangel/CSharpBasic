@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using CSharpBasicTests.Enums;
 using CSharpBasicTests.Models;
 using CSharpBasicTests.Utilities;
@@ -11,12 +12,12 @@ namespace CSharpBasicTests.Basic
     [TestFixture]
     public class LinqByTests
     {
-        [TestMethod]
+        [Test]
         public void get_employee_age_greater_than_25()
         {
             var employees = RepositoryFactory.GetEmployees();
             // implement GetEmployeesAgeGreaterThan25
-            var actual = new WithoutLinq().GetEmployeesAgeGreaterThan25(employees);
+            var actual = new WithoutLinq().GetEmployeesAgeGreaterThan25(employees).ToList();
 
             var expected = new List<Employee>()
             {
@@ -31,12 +32,12 @@ namespace CSharpBasicTests.Basic
             expected.ToExpectedObject().ShouldEqual(actual);
         }
 
-        [TestMethod]
+        [Test]
         public void get_employee_monthSalary_greater_than_150()
         {
             var employees = RepositoryFactory.GetEmployees();
             // implement GetEmployeesMonthSalaryBiggerThan150
-            var actual = new WithoutLinq().GetEmployeesMonthSalaryBiggerThan150(employees);
+            var actual = new WithoutLinq().GetEmployeesMonthSalaryBiggerThan150(employees).ToList();
 
             var expected = new List<Employee>()
             {
