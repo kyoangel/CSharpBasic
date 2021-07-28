@@ -3,6 +3,9 @@
     public class DemoService
     {
         public static string Property { get; set; }
+        public const string Const = "123";
+        public int Care { get; set; }
+        public int DonCare { get; set; }
 
         public string GetProperty()
         {
