@@ -2,6 +2,13 @@
 {
     public class DemoService
     {
+        public static string Property { get; set; }
+
+        public string GetProperty()
+        {
+            return Property + "s";
+        }
+
         public string PublicMethod()
         {
             return "result";
