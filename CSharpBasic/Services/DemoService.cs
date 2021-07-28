@@ -7,6 +7,7 @@
         public int Care { get; set; }
         public int DonCare { get; set; }
 
+
         public string GetProperty()
         {
             return Property + "s";
