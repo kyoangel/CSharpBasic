@@ -1,7 +1,7 @@
-﻿using System.Diagnostics;
+﻿using CSharpBasic.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using CSharpBasic.Models;
+using System.Diagnostics;
 
 namespace CSharpBasic.Controllers
 {
